@@ -1,0 +1,30 @@
+﻿@*@model List<PrimeraAppCore.Models.ViewModel.CourseViewModel>*@
+@{
+    ViewData["Title"] = "ListaDeCursos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ListaDeCursos</h1>
+
+<table table class="table table-dark table-striped">
+        <th>
+            CourseId
+        </th>
+        <th>
+            Title
+        </th>
+        <th>
+            Credits
+        </th>
+        <tbody>
+            @foreach (var item in ViewBag.lista)
+            {
+            <tr>
+                <td>@item.CourseId</td>
+                <td>@item.Title</td>
+                <td>@item.Credits</td>
+            </tr>
+            }
+
+        </tbody>
+    </table>

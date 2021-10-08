@@ -1,0 +1,37 @@
+﻿@model PrimeraAppCore.Models.Estudiante
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Informacion del estudiante</h1>
+@using (Html.BeginForm("Val", "Estudiante"))
+{
+
+    @Html.LabelFor(m => m.Nombre)
+    <br />
+    @Html.TextBoxFor(m => m.Nombre)
+    @Html.ValidationMessageFor(m => m.Nombre)
+    <br />
+    <br />
+    @Html.LabelFor(m => m.Edad)
+    <br />
+    @Html.TextBoxFor(m => m.Edad, new { Type = "number"})
+    @Html.ValidationMessageFor(m => m.Edad)
+    <br />
+    <br />
+    @Html.LabelFor(m => m.Sexo)
+    <br />
+    @Html.TextBoxFor(m => m.Sexo)
+    @Html.ValidationMessageFor(m => m.Sexo)
+    <br />
+    <br />
+    @Html.LabelFor(m => m.Nivel)
+    <br />
+    @Html.TextBoxFor(m => m.Nivel)
+    @Html.ValidationMessageFor(m => m.Nivel)
+    <br />
+    <br />
+
+    <input type="submit" value="Enviar informacion"/>
+}

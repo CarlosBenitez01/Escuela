@@ -1,0 +1,30 @@
+﻿using Microsoft.EntityFrameworkCore;
+using PrimeraAppCore.Dominio;
+using System;
+using System.Collections.Generic;
+
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace PrimeraAppCore.Data
+{
+    public class ApplicationDbContext : DbContext
+    {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        
+            : base(options){ 
+
+        }
+        
+        public DbSet<Students> Students { get; set; }
+
+        public DbSet<EnrollMent> Enrollments { get; set; }
+
+        public DbSet<Course> Courses { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
+    }
+}
